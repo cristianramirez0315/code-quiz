@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link rel="stylesheet" href="./assets/css/style.css">
+    </head>
+    <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="./assets/js/script.js"></script>
+        
+        <div class="container">
+            
+            <div class="row bg-dark btn-dark">
+                <div class="col-lg-10 col-md-10 col-sm-10">
+                    <a href="#" onclick="displayHighscores()">Highscores</a>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2" id="timer"></div>
+            </div>
+    
+            <div class="row justify-content-center align-items-center" id="main-content-container">
+                <div class="justify-content-center align-items-center" id="welcome">
+                   <h1>Coding Quiz Challenge!</h1>
+                   <p>Try to the answer the questions to the best of your abilities,
+                       you will have a total of 60 seconds to finish the quiz. If you answer
+                       any of the questions wrong, 5 seconds will be deducted from your time. 
+                       Good luck! 
+                   </p>
+                   <button type="button" class="btn btn-dark" id="start-quiz">Start quiz</button>
+                </div>
+                <div class="justify-content-center align-items-center" id="quiz">
+                    <h2 id="question"></h2>
+                    <ul id="choices">
+                        <li>
+                            <button  id="choice-a" type="button" class="btn btn-dark answer-button" onclick="pickAnswer(0)"></button>
+                        </li>
+                        <li>
+                            <button  id="choice-b" type="button" class="btn btn-dark answer-button" onclick="pickAnswer(1)"></button>
+                        </li>
+                        <li>
+                            <button  id="choice-c" type="button" class="btn btn-dark answer-button" onclick="pickAnswer(2)"></button>
+                        </li>
+                        <li>
+                            <button  id="choice-d"type="button" class="btn btn-dark answer-button" onclick="pickAnswer(3)"></button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="justify-content-center align-items-center" id="score">
+                    <h1 class="user-message">Well done!</h1>
+                    <p>Your score is: <span id="user-score"></span><p>
+                    <div>
+                        <label>Initials: </label>
+                        <input type="text" id="username"/>
+                        <button type="button" class="btn btn-dark" onclick="saveScore();">Submit</button>
+                    </div>
+                 </div>
+                 <div class="justify-content-center align-items-center" id="scoreboard">
+                     <h1>Highscores</h1>
+                     <ul id="highscores"></ul>
+                     <button type="button" class="btn btn-dark" onclick="location.reload();">Retry</button>
+                     <button type="button" class="btn btn-dark" onclick="clearLocalStorage()">Clear</button>
+                  </div>
+            </div>
+        </div>
+    </body>
+</html>
